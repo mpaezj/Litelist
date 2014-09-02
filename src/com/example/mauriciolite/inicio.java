@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.sax.RootElement;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,14 +30,23 @@ public class inicio extends Fragment{
         final List<contacto> contactos = new ArrayList<contacto>();
         contactos.add(new contacto("mauricio","3216547"));
         contactos.add(new contacto("javier","3258736"));
+        contactos.add(new contacto("pedro","3656856"));
+        contactos.add(new contacto("carla","3651455"));
         adaptador ada= new adaptador(rootView.getContext(),contactos);
         list.setAdapter(ada);
         
         list.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View view, int position, long index) {
-            	System.out.println("sadsfsf");
-                Toast.makeText(rootView.getContext(), contactos.get(position).getNombre(), Toast.LENGTH_LONG).show();
+            	mostrar= new mostrar();
+            	Bundle args = new Bundle();
+            	args.putString("numero", contactos.get(position).getNumero());
+            	args.putString("nombre", contactos.get(position).getNombre());
+            	mostrar.setArguments(args);
+            	FragmentTransaction ft = getActivity()
+						.getSupportFragmentManager().beginTransaction();
+				ft.replace(R.id.container, mostrar)
+						.addToBackStack("mostar").commit();
             }
         });
         return rootView;
