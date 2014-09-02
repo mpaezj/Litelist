@@ -13,14 +13,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <EditText
-                android:id="@+id/editText1"
+            <TextView
+                android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10" >
-
-                <requestFocus />
-            </EditText>
+                android:text="TextView" />
 
         </TableRow>
 
@@ -29,11 +26,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <EditText
-                android:id="@+id/editText2"
+            <TextView
+                android:id="@+id/numero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:text="TextView" />
 
         </TableRow>
 
@@ -41,12 +38,6 @@
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pasar" />
 
         </TableRow>
     </TableLayout>
